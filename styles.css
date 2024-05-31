@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #b3003b;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+}
+
+header .hindi {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    background-color: #800026;
+    overflow: hidden;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: #b3003b;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    background-color: #f4f4f4;
+    padding: 10px 0;
+   
+}
+
+.links a {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #b3003b;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.links a:hover {
+    background-color: #800026;
+}
+
+.divisions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.division {
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.division img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.division h3 {
+    color: #b3003b;
+    margin: 10px 0;
+}
+
+.division p {
+    color: #333;
+}
