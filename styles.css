@@ -82,8 +82,15 @@ nav ul li a:hover {
     padding: 20px;
 }
 
+.tweets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
 .division {
-    width: 300px;
+    width: 500px;
     margin: 10px;
     padding: 20px;
     background-color: #f9f9f9;
@@ -93,7 +100,7 @@ nav ul li a:hover {
 
 .division img {
     width: 100%;
-    height: auto;
+    height:300px;
     border-radius: 4px;
 }
 
@@ -104,4 +111,47 @@ nav ul li a:hover {
 
 .division p {
     color: #333;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .links {
+        flex-direction: column;
+    }
+
+    .division {
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul li a {
+        padding: 10px;
+    }
+
+    .links a {
+        margin: 5px 0;
+        padding: 8px 16px;
+    }
+
+    .division {
+        padding: 10px;
+    }
+
+    .division h3 {
+        font-size: 1.2em;
+    }
+
+    .division p {
+        font-size: 0.9em;
+    }
 }
