@@ -10,21 +10,28 @@
     <header>
         <h1>East Central Railway</h1>
         <p>"I PLEDGE FOR SWITCHING-OFF THE LIGHTS & FANS WHILE LEAVING WORK PLACE OR RES"</p>
-        <a href="#" class="hindi">हिन्दी</a>
+        <!-- <a href="#" class="hindi">हिन्दी</a> -->
+        <div class="language-switcher" >
+            <button id="englishBtn">English</button>
+            <button id="hindiBtn">हिन्दी</button>
+        </div>
+        
+       
+        <script src="script.js"></script>
     </header>
     <nav>
         <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Rly. Board</a></li>
-            <li><a href="#">Shared Folder</a></li>
-            <li><a href="#">IRPSM</a></li>
-            <li><a href="#">IREPS</a></li>
-            <li><a href="#">REIS</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">ANOMS</a></li>
-            <li><a href="#">Press Brief</a></li>
-            <li><a href="#">E Dak</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#" data-lang-en="Dashboard" data-lang-hi="होम">Dashboard</a></li>
+            <li><a href="https://indianrailways.gov.in/railwayboard/" data-lang-en="Rly. Board" data-lang-hi="रैलवे बोर्ड">Rly. Board</a></li>
+            <li><a href="#" data-lang-en="Shared Folder" data-lang-hi="अन्य रेलवे.">Shared Folder</a></li>
+            <li><a href="https://ircep.gov.in/IRPSM/" data-lang-en="IRPSM" data-lang-hi="आईआरपीएसएम">IRPSM</a></li>
+            <li><a href="https://www.ireps.gov.in/" data-lang-en="IREPS" data-lang-hi="आईआरइपीएस">IREPS</a></li>
+            <li><a href="https://indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,5,383" data-lang-en="REIS" data-lang-hi="आरईआईएस">REIS</a></li>
+            <li><a href="https://indianrailways.gov.in/" data-lang-en="News" data-lang-hi="न्यूज">News</a></li>
+            <li><a href="ANOMS.html" data-lang-en="ANOMS" data-lang-hi="गैलेरी">ANOMS</a></li>
+            <li><a href="#" data-lang-en="Press Brief" data-lang-hi="पत्रकारिता विवरण">Press Brief</a></li>
+            <li><a href="#" data-lang-en="E Dak" data-lang-hi="पीएनआर स्टेटस">E Dak</a></li>
+            <li><a href="#" data-lang-en="Contact" data-lang-hi="संपर्क">Contact</a></li>
         </ul>
     </nav>
 
@@ -59,7 +66,9 @@
     <section class="divisions">
         <div class="division">
             <img src="dhanabad.jpg" alt="Dhanbad Division">
+            
             <h3>DHANBAD DIVISION</h3>
+          
             <p>Adra division spreads over 3 districts of West Bengal viz. Bankura, Purulia & West Midnapur and 2 districts of Jharkhand viz. Saraikela and Bokaro having a route km of 732.503</p>
         </div>
         <div class="division">
