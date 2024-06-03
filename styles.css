@@ -12,13 +12,13 @@ header {
     position: relative;
 }
 
-/* header .hindi {
+header .hindi {
     position: absolute;
     top: 10px;
     right: 20px;
     color: white;
     text-decoration: none;
-} */
+}
 .language-switcher {
     position: absolute;
     top: 10px;
@@ -200,6 +200,12 @@ footer {
     padding: 10px 0;
     margin-top: 20px;
 }
+.language-switcher{
+    font-size: 20px;
+}
+.lanButton{
+    font-size: 50px;
+}
 
 .footer-bottom p {
     margin: 0;
@@ -230,6 +236,13 @@ footer {
     .division {
         width: calc(100% - 40px);
     }
+
+    .language-switcher{
+        display:table-column;
+        font-size: 5px;
+    }
+    
+    
 }
 
 @media (max-width: 480px) {
@@ -257,4 +270,6 @@ footer {
     .division p {
         font-size: 0.9em;
     }
+
+
 }
