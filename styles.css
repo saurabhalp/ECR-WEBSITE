@@ -233,6 +233,13 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .language-switcher{
+        width: 200px;
+        justify-content: end;
+        align-items: end;
+        font-size: small;
+      
+    }
     header h1 {
         font-size: 1.5em;
     }
