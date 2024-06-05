@@ -21,6 +21,7 @@ let currentLang = 'en';
 
 const langMap = {
     'en': {
+        'Hindi': 'हिन्दी',
         'East Central Railway': 'East Central Railway',
         '"I PLEDGE FOR SWITCHING-OFF THE LIGHTS & FANS WHILE LEAVING WORK PLACE OR RES"': '"I PLEDGE FOR SWITCHING-OFF THE LIGHTS & FANS WHILE LEAVING WORK PLACE OR RES"',
         'Dashboard': 'Dashboard',
@@ -47,6 +48,7 @@ const langMap = {
         'GST': 'GST',
     },
     'hi': {
+        'Hindi': 'English',
         'East Central Railway': 'पूर्वी रेलवे',
         '"I PLEDGE FOR SWITCHING-OFF THE LIGHTS & FANS WHILE LEAVING WORK PLACE OR RES"': 'मैं कार्य स्थल या आवास छोड़ते समय लाइट और पंखे बंद करने की शपथ लेता हूँ',
         'Dashboard': 'डैशबोर्ड',
