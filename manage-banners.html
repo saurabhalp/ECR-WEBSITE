@@ -1,4 +1,4 @@
-<h2>Manage Banners</h2>
+<!-- <h2>Manage Banners</h2>
 <form id="banner-form">
     <label for="banner-title">Banner Title:</label>
     <input type="text" id="banner-title" name="banner-title" required>
@@ -19,7 +19,7 @@
         </tr>
     </thead>
     <tbody>
-        <!-- Banner entries will be dynamically inserted here -->
+         //Banner entries will be dynamically inserted here 
     </tbody>
 </table>
 <script>document.addEventListener('DOMContentLoaded', function () {
@@ -54,4 +54,182 @@
     });
 });
 
-</script>
+</script> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Manage Banners</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        form input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .delete-button {
+            background-color: #dc3545;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Manage Banners</h2>
+    <form id="banner-form">
+        <label for="banner-title">Banner Title:</label>
+        <input type="text" id="banner-title" name="banner-title" required>
+        
+        <label for="banner-image">Banner Image URL:</label>
+        <input type="url" id="banner-image" name="banner-image" required>
+        
+        <button type="submit">Add Banner</button>
+    </form>
+
+    <h3>Existing Banners</h3>
+    <table id="banner-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Banner entries will be dynamically inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const bannerForm = document.getElementById('banner-form');
+            const bannerTableBody = document.getElementById('banner-table').querySelector('tbody');
+
+            // Function to fetch and display banners
+            function fetchBanners() {
+                fetch('http://localhost:3000/api/banners')
+                    .then(response => response.json())
+                    .then(data => {
+                        bannerTableBody.innerHTML = '';
+                        data.forEach(banner => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${banner.title}</td>
+                                <td><img src="${banner.imageUrl}" alt="${banner.title}" style="width: 100px;"></td>
+                                <td><button class="delete-button" data-title="${banner.title}">Delete</button></td>
+                            `;
+                            bannerTableBody.appendChild(row);
+                        });
+
+                        // Add event listeners to delete buttons
+                        document.querySelectorAll('.delete-button').forEach(button => {
+                            button.addEventListener('click', function () {
+                                const bannerTitle = this.getAttribute('data-title');
+                                deleteBanner(bannerTitle);
+                            });
+                        });
+                    })
+                    .catch(error => console.error('Error fetching banners:', error));
+            }
+
+            // Function to delete a banner
+            function deleteBanner(title) {
+                fetch(`http://localhost:3000/api/banners/${title}`, {
+                    method: 'DELETE'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Banner deleted successfully');
+                        fetchBanners(); // Refresh banner list
+                    } else {
+                        console.error('Error deleting banner');
+                    }
+                })
+                .catch(error => console.error('Error deleting banner:', error));
+            }
+
+            // Form submission handler to add a new banner
+            bannerForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const formData = new FormData(bannerForm);
+                const bannerData = {
+                    title: formData.get('banner-title'),
+                    imageUrl: formData.get('banner-image')
+                };
+
+                fetch('http://localhost:3000/api/banners', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(bannerData)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Banner saved successfully');
+                        bannerForm.reset();
+                        fetchBanners(); // Refresh banner list
+                    } else {
+                        console.error('Error saving banner');
+                    }
+                })
+                .catch(error => console.error('Error saving banner:', error));
+            });
+
+            // Initial fetch of banners
+            fetchBanners();
+        });
+    </script>
+</body>
+</html>
+
