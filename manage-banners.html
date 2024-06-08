@@ -156,7 +156,7 @@
 
             // Function to fetch and display banners
             function fetchBanners() {
-                fetch('http://localhost:3000/api/banners')
+                fetch('api/banners')
                     .then(response => response.json())
                     .then(data => {
                         bannerTableBody.innerHTML = '';
