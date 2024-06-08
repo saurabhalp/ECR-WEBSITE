@@ -70,6 +70,35 @@ app.post('/api/banners', (req, res) => {
     });
 });
 
+// Endpoint to handle DELETE requests for removing banners
+app.delete('/api/banners/:title', (req, res) => {
+    const bannerTitle = req.params.title;
+
+    fs.readFile(bannersFile, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading banners.json:', err);
+            res.status(500).send('Error reading banners');
+        } else {
+            try {
+                let banners = JSON.parse(data);
+                banners = banners.filter(banner => banner.title !== bannerTitle);
+
+                fs.writeFile(bannersFile, JSON.stringify(banners, null, 2), (writeErr) => {
+                    if (writeErr) {
+                        console.error('Error writing to banners.json:', writeErr);
+                        res.status(500).send('Error deleting banner');
+                    } else {
+                        res.status(200).send('Banner deleted successfully');
+                    }
+                });
+            } catch (parseError) {
+                console.error('Error parsing JSON:', parseError);
+                res.status(500).send('Error parsing banners');
+            }
+        }
+    });
+});
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
