@@ -1,102 +1,150 @@
+/* General Styles */
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
 }
 
 .dashboard-container {
     display: flex;
-    min-height: 100vh;
 }
 
 header {
     background-color: #b3003b;
     color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 24px;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
 }
 
 header .logout-btn {
-    background-color: #800026;
+    position: absolute;
+    top: 10px;
+    right: 20px;
     color: white;
-    padding: 8px 16px;
     text-decoration: none;
-    border-radius: 4px;
+    background-color: #800026;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 header .logout-btn:hover {
-    background-color: #b3003b;
+    background-color: #a00030;
 }
 
 aside {
-    width: 200px;
-    background-color: #222;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
+    background-color: #f4f4f4;
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 aside nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 aside nav ul li {
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 aside nav ul li a {
-    color: white;
     text-decoration: none;
+    color: #333;
     display: block;
-    padding: 10px 20px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, border 0.3s;
 }
 
 aside nav ul li a:hover {
-    background-color: #444;
+    background-color: #b3003b;
+    color: white;
+    border: 1px solid #b3003b;
 }
 
 main {
     flex: 1;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 main .content {
-    max-width: 800px;
-    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
-main .content h2 {
+h1, h2, h3 {
     color: #b3003b;
 }
 
-main .content p {
-    color: #333;
+/* Manage Banners Styles */
+#banner-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-    .dashboard-container {
-        flex-direction: column;
-    }
+#banner-form label {
+    margin: 10px 0 5px;
+}
 
-    aside {
-        width: 100%;
-        order: 1;
-    }
+#banner-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
 
-    main {
-        order: 2;
-    }
+#banner-form button {
+    padding: 10px 15px;
+    background-color: #b3003b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#banner-form button:hover {
+    background-color: #800026;
+}
+
+#banner-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#banner-table th,
+#banner-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#banner-table th {
+    background-color: #f4f4f4;
+}
+
+#banner-table img {
+    max-width: 100px;
+    border-radius: 4px;
+}
+
+.delete-button {
+    background-color: #b3003b;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #800026;
 }
