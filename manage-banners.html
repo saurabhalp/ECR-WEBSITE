@@ -1,0 +1,57 @@
+<h2>Manage Banners</h2>
+<form id="banner-form">
+    <label for="banner-title">Banner Title:</label>
+    <input type="text" id="banner-title" name="banner-title" required>
+    
+    <label for="banner-image">Banner Image URL:</label>
+    <input type="url" id="banner-image" name="banner-image" required>
+    
+    <button type="submit">Add Banner</button>
+</form>
+
+<h3>Existing Banners</h3>
+<table id="banner-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Banner entries will be dynamically inserted here -->
+    </tbody>
+</table>
+<script>document.addEventListener('DOMContentLoaded', function () {
+    const bannerForm = document.getElementById('banner-form');
+
+    bannerForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(bannerForm);
+        const bannerData = {
+            title: formData.get('banner-title'),
+            imageUrl: formData.get('banner-image')
+        };
+
+        fetch('http://localhost:3000/api/banners', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bannerData)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Banner saved successfully');
+                // Add code to update UI or show success message
+            } else {
+                console.error('Error saving banner');
+                // Add code to handle error or show error message
+            }
+        })
+        .catch(error => console.error('Error saving banner:', error));
+    });
+});
+
+</script>

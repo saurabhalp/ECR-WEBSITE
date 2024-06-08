@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>East Central Railway</title>
-    <link rel="stylesheet" href="styles.css">
-    
+    <link rel="stylesheet" href="css/styles.css">
+ 
 </head>
 <body>
     <header>
@@ -14,6 +14,7 @@
             "I PLEDGE FOR SWITCHING-OFF THE LIGHTS & FANS WHILE LEAVING WORK PLACE OR RES"
         </p>
         <a href="#" class="hindi" data-lang="en" data-lang-text="Hindi" onclick="toggleLanguage()">हिन्दी</a>
+        <a href="admin-login-page.html" class="admin-login">Admin Login</a>
     </header>
     <nav>
         <ul>
@@ -30,8 +31,7 @@
             <li><a href="#" data-lang="en" data-lang-text="Contact">Contact</a></li>
         </ul>
     </nav>
-
-    <section class="slideshow-container">
+    <section class="slideshow-container" id="banner-container">
         <div class="mySlides fade">
             <img src="train.jpg" alt="Train 1" class="banner-image">
         </div>
@@ -39,18 +39,19 @@
             <img src="samastipur.avif" alt="Train 2" class="banner-image">
         </div>
         <div class="mySlides fade">
-            <img src="train.jpg" alt="Train 3" class="banner-image">
+            <img src="wp5521940.jpg" alt="Train 3" class="banner-image">
         </div>
         <div class="mySlides fade">
-            <img src="sonpur.jpeg" alt="Train 4" class="banner-image">
+            <img src="upadhyay.jpg" alt="Train 4" class="banner-image">
         </div>
     </section>
 
     <section class="links">
         <a href="#">E-Mail</a>
-        <a href="#">Schedule of Power</a>
+        <!-- <a href="#">Schedule of Power</a>
+        
+        <a href="#">SERPOA</a> -->
         <a href="#">SEROA</a>
-        <a href="#">SERPOA</a>
         <a href="#">Safar-A Journey</a>
         <a href="#">FOIS</a>
         <a href="#">IPAS</a>
@@ -58,6 +59,8 @@
         <a href="#">System Map</a>
         <a href="#">Codes & Man</a>
         <a href="#">GST</a>
+        <a href="gallery.html">Gallery</a>
+
     </section>
     <section class="divisions">
         <div class="division">
@@ -128,8 +131,8 @@
             <p>&copy; 2024 East Cental Railway. All rights reserved.</p>
         </div>
     </footer>
-    <script src="script.js"></script>
-
+    <script src="JS/script.js"></script>
+<!-- 
     <script>
         let slideIndex = 0;
         showSlides();
@@ -144,7 +147,7 @@
             slides[slideIndex - 1].style.display = "block";
             setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
-    </script>
+    </script> -->
    
 </body>
 </html>
