@@ -156,7 +156,7 @@
 
             // Function to fetch and display banners
             function fetchBanners() {
-                fetch('/api/banners')
+                fetch('https://saurabhalp.github.io/ECR-WEBSITE/api/banners')
                     .then(response => response.json())
                     .then(data => {
                         bannerTableBody.innerHTML = '';
