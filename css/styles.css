@@ -277,3 +277,82 @@ footer {
 
 
 }
+nav ul li ul.submenu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    min-width: 120px; /* Reduced width */
+}
+
+nav ul li:hover ul.submenu {
+    display: block;
+}
+
+nav ul li ul.submenu li {
+    display: block;
+    position: relative;
+    padding: 0;
+}
+
+nav ul li ul.submenu li a {
+    color: #333;
+    padding: 2.5px 7.5px 2.5px 2.5px; /* Add padding for alignment */
+    display: flex;
+    justify-content: space-between; /* Align items */
+    align-items: center; /* Center items vertically */
+}
+
+nav ul li ul.submenu li a:hover {
+    background-color: #f0f0f0;
+}
+
+nav ul li ul.subsubmenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    min-width: 120px; /* Reduced width */
+}
+
+nav ul li ul.submenu li:hover > ul.subsubmenu {
+    display: block;
+}
+
+nav ul li ul.subsubmenu li {
+    display: block;
+    padding: 0;
+}
+
+nav ul li ul.subsubmenu li a {
+    color: #000000;
+    padding: 4px 8px; /* Reduced padding */
+    display: block;
+    font-size: 14px;
+    text-align: left;
+}
+
+nav ul li ul.subsubmenu li a:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* Style for the triangle */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;
+    margin-left: 10px; /* Space between text and triangle */
+    position: relative;
+    top: 2px; /* Adjust vertical alignment */
+}

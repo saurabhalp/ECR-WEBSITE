@@ -148,3 +148,19 @@ h1, h2, h3 {
 .delete-button:hover {
     background-color: #800026;
 }
+
+.construction-container h2 {
+    color: #b3003b;
+    margin-bottom: 20px;
+}
+
+.construction-container p {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.construction-container img {
+    width: auto;
+    height: 200px; /* Fixed height */
+    margin-bottom: 20px;
+}

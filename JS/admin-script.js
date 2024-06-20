@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         setupBannerForm();
                         loadExistingBanners();
                     }
+                    if(page == 'underconstruction.html'){
+                        
+                    }
                 })
                 .catch(error => console.error('Page in Underconstruction', error));
         });
