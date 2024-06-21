@@ -345,6 +345,38 @@ nav ul li ul.subsubmenu li a:hover {
 }
 
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    flex-shrink: 0;
+    margin-right: 20px; /* Adjust as needed */
+}
+
+.header-content {
+    flex-grow: 1;
+}
+
+header {
+    background-color: #b3003b;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    flex-shrink: 0;
+    margin-right: 20px; /* Adjust as needed */
+    filter: invert();
+}
+
+.header-content {
+    flex-grow: 1;
+}
 /* Style for the triangle */
 .triangle {
     width: 0;
